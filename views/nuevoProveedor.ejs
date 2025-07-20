@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agregar Proveedor</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>+ Agregar Proveedor</h1>
+
+  <form action="/proveedores" method="POST">
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" required>
+
+    <label for="contacto">Contacto:</label>
+    <input type="text" name="contacto" id="contacto">
+
+    <label for="telefono">Teléfono:</label>
+    <input type="text" name="telefono" id="telefono">
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email">
+
+    <label for="productosOfrecidos">Productos ofrecidos (códigos separados por coma):</label>
+    <input type="text" name="productosOfrecidos" id="productosOfrecidos">
+
+    <button type="submit">Guardar Proveedor</button>
+  </form>
+
+  <a href="/proveedores">← Volver a la lista</a>
+</body>
+</html>

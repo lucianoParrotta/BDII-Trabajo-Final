@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sistema de Inventario</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Productos en Inventario</h1>
+
+  <div class="nav-grid">
+    <div class="nav-block">
+      <h3>Altas</h3>
+      <a href="/productos/nuevo">Agregar Producto</a>
+      <a href="/proveedores/nuevo">Agregar Proveedor</a>
+      <a href="/movimientos/nuevo">Registrar Movimiento</a>
+    </div>
+
+    <div class="nav-block">
+      <h3>Consultas y Reportes</h3>
+      <a href="/productos/consultar-stock">Consultar Stock</a>
+      <a href="/productos/stock-bajo">Stock Bajo</a>
+      <a href="/movimientos/reporte">Reporte de Movimientos</a>
+      <a href="/proveedores">Ver Proveedores</a>
+    </div>
+  </div>
+
+
+  <% if (productos.length > 0) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Categoría</th>
+          <th>Precio</th>
+          <th>Stock</th>
+          <th>Stock Mínimo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% productos.forEach(p => { %>
+          <tr>
+            <td><%= p.codigo %></td>
+            <td><%= p.nombre %></td>
+            <td><%= p.categoria %></td>
+            <td>$<%= p.precio.toFixed(2) %></td>
+            <td><%= p.stockActual %></td>
+            <td><%= p.stockMinimo %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <p>No hay productos cargados aún.</p>
+  <% } %>
+</body>
+</html>

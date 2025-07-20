@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reporte de Movimientos</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Reporte de Movimientos</h1>
+
+  <form action="/movimientos/reporte" method="POST">
+    <label for="fechaInicio">Fecha inicio:</label>
+    <input type="date" name="fechaInicio" id="fechaInicio" required>
+
+    <label for="fechaFin">Fecha fin:</label>
+    <input type="date" name="fechaFin" id="fechaFin" required>
+
+    <button type="submit">Generar Reporte</button>
+  </form>
+
+  <% if (movimientos && movimientos.length > 0) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Tipo</th>
+          <th>Cantidad</th>
+          <th>Motivo</th>
+          <th>Usuario</th>
+          <th>Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% movimientos.forEach(m => { %>
+          <tr>
+            <td><%= m.productoId?.nombre || "Desconocido" %></td>
+            <td><%= m.tipo %></td>
+            <td><%= m.cantidad %></td>
+            <td><%= m.motivo %></td>
+            <td><%= m.usuario %></td>
+            <td><%= m.fecha.toISOString().split('T')[0] %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else if (movimientos) { %>
+    <p>No se encontraron movimientos en ese rango.</p>
+  <% } %>
+
+  <a href="/">← Volver al inicio</a>
+</body>
+</html>

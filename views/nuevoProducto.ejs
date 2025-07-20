@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agregar Producto</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>+ Agregar Nuevo Producto</h1>
+
+  <form action="/productos" method="POST">
+    <label for="codigo">Código:</label>
+    <input type="text" name="codigo" id="codigo" required>
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" required>
+
+    <label for="categoria">Categoría:</label>
+    <input type="text" name="categoria" id="categoria">
+
+    <label for="precio">Precio:</label>
+    <input type="number" name="precio" id="precio" step="0.01">
+
+    <label for="stockActual">Stock Actual:</label>
+    <input type="number" name="stockActual" id="stockActual">
+
+    <label for="stockMinimo">Stock Mínimo:</label>
+    <input type="number" name="stockMinimo" id="stockMinimo">
+
+    <button type="submit">Guardar Producto</button>
+  </form>
+
+  <a href="/">← Volver al inicio</a>
+</body>
+</html>

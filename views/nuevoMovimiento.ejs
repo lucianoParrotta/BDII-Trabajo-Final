@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registrar Movimiento</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Registrar Movimiento de Stock</h1>
+
+  <form action="/movimientos" method="POST">
+    <label for="productoId">Producto:</label>
+    <select name="productoId" id="productoId" required>
+      <% productos.forEach(p => { %>
+        <option value="<%= p._id %>"><%= p.nombre %> (<%= p.codigo %>)</option>
+      <% }) %>
+    </select>
+
+    <label for="tipo">Tipo de Movimiento:</label>
+    <select name="tipo" id="tipo" required>
+      <option value="entrada">Entrada</option>
+      <option value="salida">Salida</option>
+    </select>
+
+    <label for="cantidad">Cantidad:</label>
+    <input type="number" name="cantidad" id="cantidad" min="1" required>
+
+    <label for="motivo">Motivo:</label>
+    <input type="text" name="motivo" id="motivo">
+
+    <label for="usuario">Usuario:</label>
+    <input type="text" name="usuario" id="usuario" value="admin" required>
+
+    <button type="submit">Registrar Movimiento</button>
+  </form>
+
+  <a href="/">← Volver al inicio</a>
+</body>
+</html>
