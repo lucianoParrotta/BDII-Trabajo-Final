@@ -114,8 +114,6 @@ app.js           → Servidor Express principal
 
 ---
 
-## Integrantes
-
 - **[Luciano Parrotta]**
 
 ---
