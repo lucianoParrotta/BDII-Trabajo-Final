@@ -42,7 +42,7 @@ Este proyecto fue desarrollado como una **app web**, accesible desde el navegado
 ### 1. Clonar el repositorio o descargar el proyecto
 ```bash
 git clone https://github.com/lucianoParrotta/BDII-Trabajo-Final.git
-cd PROYECTO-FINAL-BD2-MAIN
+cd BDII-Trabajo-Final
 ```
 
 ### 2. Instalar Node.js y MongoDB
